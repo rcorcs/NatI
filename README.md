@@ -2,14 +2,14 @@ https://www.youtube.com/watch?v=94IOUW0EQyg
 
 ### Basic commands
 
-##### open/start/execute/run <app>
+##### open/start/execute/run [app]
 
 e.g.
 open browser
 start editor
 open firefox
 
-##### finish/close/terminate/exit <app>
+##### finish/close/terminate/exit [app]
 
 e.g.
 close browser
@@ -20,7 +20,7 @@ close calculator
 
 ##### what day is today
 
-##### play songs/musics by/from <artist>
+##### play songs/musics by/from [artist]
 
 e.g.
 
@@ -28,7 +28,7 @@ play songs by Queen
 play songs from Les Miserables
 
 ##### next song
-
+g
 ##### previous song
 
 ##### pause song
@@ -48,7 +48,7 @@ e.g.
 awake
 wake up
 
-##### change language to <language>
+##### change language to [language]
 
 e.g.
 
