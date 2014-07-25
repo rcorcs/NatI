@@ -1,0 +1,36 @@
+Changes between WordNet 2.0 and 2.1
+
+1 - Database files all follow Unix naming convention.  Index files are
+index.pos and data files are data.pos where "pos" is:
+
+noun
+verb
+adj
+adv
+
+2 - Hyponyms are now classified as either generic or INSTANCES, as
+indicated in search output.
+
+3 - Troponyms can be "full" or "brief" in graphical browser.  The
+"brief" search was not available in graphical browser (wnb) but was in
+command line interface (wn).
+
+4 - Graphical browser now has a selection under "Options" to save the
+current display and search output options settings as user's default
+settings.  These settings will be used by default whenever the user
+runs the interface.
+
+5 - Many pertainyms in "adj.pert" have been replaced with
+morphosemantic links.
+
+6 - Windows version now uses registry variables to save path to
+database and user options:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\WordNet\2.1\WNHome - Installation home
+HKEY_CURRENT_USER\SOFTWARE\WordNet\2.1\wnres - Graphical interface
+					       display options
+
+7 - All nouns are in one tree under "entity" in "noun.Tops".
+
+8 - WordNet URL is now "wordnet.princeton.edu"
+

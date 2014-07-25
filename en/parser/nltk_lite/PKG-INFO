@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: nltk_lite
+Version: 0.7a2
+Summary: Natural Language Toolkit
+Home-page: http://nltk.sf.net/
+Author: Steven Bird
+Author-email: sb@csse.unimelb.edu.au
+License: GNU Public License
+Description: The Natural Langauge Toolkit (NLTK-Lite) is a Python package for
+        processing natural language text.  It was developed as a simpler,
+        lightweight version of NLTK.  NLTK-Lite requires Python 2.4 or higher.
+Keywords: NLP,CL,natural language processing,computational linguistics,parsing,tagging,tokenizing,syntax,linguistics,language,natural language
+Platform: UNKNOWN

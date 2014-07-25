@@ -1,0 +1,297 @@
+<div id="fb-root"></div>
+<div id="tw-root"></div>
+<div id="go-root"></div>
+<div id="altContent">
+    <h1>Grooveshark - Free Music Streaming</h1>
+    <h2>Online Radio and Internet Streaming.</h2>
+    <a href="/music" rel="songs navigate">Music</a>
+    <a href="/music/popular" rel="songs navigate">Popular Music</a>
+    <a href="/music/videos" rel="stations navigate">Music Videos</a>
+    <a href="/music/stations" rel="stations navigate">Online Radio Stations</a>
+    <a href="/community" rel="community navigate">Community Music</a>
+    <noscript>
+        <a href="http://grooveshark.com/" title="Grooveshark"><img src="http://www.grooveshark.com/webincludes/logo/Grooveshark_Logo_Horizontal.png" alt="Grooveshark" /></a>
+        <h2>Listen to free music online.</h2>
+        <p>Grooveshark provides free music streaming, online radio stations, and
+            lets you connect with artists and friends.</p>
+        <p>Grooveshark is the world's largest international community of music lovers.
+            Over 30 million people use Grooveshark to listen to their favorite music,
+            discover new bands, and share across social networks.</p>
+        <p>Grooveshark also serves as a powerful platform for artists to promote,
+            market, and monetize their music.</p>
+        <p>Get started by searching for music!</p>
+        <form method="get" action="/search/song"
+        class="searchSite" name="searchSite" id="searchSite">
+            <input type="text" name="q" class="searchBoxInput" autocomplete="off"
+            placeholder="Search for Music" />
+            <button id="searchSubmitButton" type="submit" class="submit" title="Search"></button>
+        </form>
+        <ul class="links">
+            <li>
+                <a href="http://www.grooveshark.com/about">About</a>
+            </li>
+            <li>
+                <a href="http://grooveshark.com/advertising">Advertise</a>
+            </li>
+            <li>
+                <a href="http://store.grooveshark.com/">Merchandise Store</a>
+            </li>
+            <li>
+                <a href="http://help.grooveshark.com/">Help</a>
+            </li>
+        </ul>
+    </noscript>
+    <a href="http://mobile.grooveshark.com" title="Grooveshark Mobile Applications">Grooveshark Mobile Applications</a>
+</div>
+<!-- /alt content -->
+<div id="mainContainer">
+    <div id="application">
+        <div style=" font-family: monospace; min-width: 20%;  position: absolute; font-size: 12pt; top: 8pt; left: 40%; text-align: center; z-index: 6000;">UNLOCKED by koehlma</div>
+        <div id="main">
+            <div id="header" class="main_background">
+                <h1>
+                    <a href="/#!/" id="grooveshark" class="main_asset"><span>Grooveshark</span></a>
+                </h1>
+                <div id="header_mainNavigation"></div>
+                <ul id="header_userOptions" class="session right">
+                    <li id="header_loginOption" class="loginOption header_userOption">
+                        <a id="header_login" class="login header_user_button header_user_select icon_arrow">
+                <span class="label" data-translate-text="LOGIN">Login</span>
+            </a>
+                        <div id="dropdown_loginForm_box" class="hide">
+                            <a href="#!" id="loginReplace">
+                    <span class="label">Login</span>
+                    <span class="arrow icon_arrow"></span>
+                </a>
+                            <div class="error hide">
+                                <div class="message"></div>
+                            </div>
+                            <div id="putLoginFormHere"></div>
+                            <div class="loginLinks">
+                                <div class="capsuleBottom">
+                                    <a href="#!/signup" class="signup loginLink" data-translate-text="SIGNUP">Sign up</a>
+                                    <a class="upgrade loginLink" href="#!/settings/subscriptions" data-translate-text="UPGRADE">Upgrade</a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="content">
+                <div id="sidebar" class="container fixed scrollAdjust"></div>
+                <div id="page_wrapper">
+                    <div id="theme_home" class="theme_component"></div>
+                    <div id="theme_page_header" class="theme_component"></div>
+                    <div id="theme_page_header_expandable" class="theme_component"></div>
+                    <div id="page">
+                        <div id="page_content">
+                            <div id="homePage">
+                                <noscript>
+                                    <div id="noScript_home">
+                                        <div id="noScript_home_content">
+                                            <p>Grooveshark requires JavaScript to be enabled. Visit our
+                                                <a href="http://help.grooveshark.com/customer/portal/articles/305023-grooveshark-requires-javascript">help article</a>for assistance.</p>
+                                        </div>
+                                    </div>
+                                </noscript>
+                                <div id="homeFooter"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="capitalSidebar" style="display: none;" class="capitalSidebarWrapper">
+                    <div id="sidebarCapitalWrapper_160" class="capitalWrapper_160 hide">
+                        <div class="capitalView_160">
+                            <div id="sidebarCapital_160" class="capital_160"></div>
+                        </div>
+                    </div>
+                    <a class="capitalSliderDown capitalSliderBtnRev stopAdAction hide"><span class="capitalSliderArrow stopAdAction"></span></a>
+                    <a class="capitalSliderUp capitalSliderBtnRev stopAdAction hide"><span class="capitalSliderArrow stopAdAction"></span></a>
+                    <a data-translate-text="REPORT_AD" class="reportAdLink vertRemove stopAdAction"
+                    data-parent="capitalSidebarWrapper"><%= $.localize.getString('REPORT_AD') %></a>
+                    <a DATA-TRANSLATE-TEXT="REMOVE_AD" class="removeAdsLink vertRemove"><%= $.localize.getString('REMOVE_AD') %></a>
+                    <!-- div id="capital_footer" class="main_background"><a href="#!/settings/subscriptions" data-translate-text="">Upgrade to Remove</a></div -->
+                </div>
+                <div id="shortcuts"></div>
+            </div>
+            <div id="footer">
+                <div id="player_queue">
+                    <div id="playerDetails" class="main_background">
+                        <div id="playerDetails_queue"></div>
+                        <div id="player_queue_resize" class="main_asset ui-resizable-handle ui-resizable-n"
+                        title="Drag to resize" data-translate-title="QUEUE_RESIZE_HANDLE"></div>
+                        <div id="playerDetails_nowPlaying"></div>
+                    </div>
+                    <div id="queue" tabindex="9999">
+                        <div id="queue_list_window" class="queue viewport">
+                            <ol id="queue_list" class="queue medium overview empty"></ol>
+                        </div>
+                        <div class="scrollbar">
+                            <div class="track">
+                                <div id="queue_scrollbar_track_inner" class="queue_scrollbar_background">
+                                    <div class="thumb ui-slider-handle">
+                                        <div id="queue_scrollbar_thumb_inner" class="queue_scrollbar_background"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="player" class="main_background">
+                    <div id="player_controls_playback">
+                        <button id="player_play_pause" class="player_control main_asset" type="button"
+                        disabled="disabled"></button>
+                        <button id="player_previous" class="player_control main_asset"
+                        type="button" disabled="disabled"></button>
+                        <button id="player_next" class="player_control main_asset" type="button"
+                        disabled="disabled"></button>
+                        <div id="player_times">
+                            <span id="player_elapsed">00:00</span>/
+                            <span id="player_duration">00:00</span>
+                        </div>
+                    </div>
+                    <div id="player_controls_right">
+                        <button id="player_shuffle" class="player_control main_asset" type="button"
+                        data-translate-title="QUEUE_SHUFFLE_SONGS"></button>
+                        <button id="player_loop" class="player_control none main_asset"
+                        type="button" data-translate-title="QUEUE_LOOP_SONGS"></button>
+                        <button id="player_crossfade" class="player_control main_asset"
+                        type="button" data-translate-title="QUEUE_CROSSFADE_SONGS"></button>
+                        <button id="player_queue_sizer" class="player_control main_asset closed"
+                        type="button" data-translate-title="QUEUE_RESIZE"></button>
+                        <button id="player_options" class="player_control main_asset"
+                        type="button" data-translate-title="QUEUE_OPTIONS"></button>
+                        <div id="player_volume_group">
+                            <div id="volumeControl">
+                                <div id="volumeSlider"></div>
+                            </div>
+                            <button id="player_volume" class="player_control off main_asset" type="button"
+                            data-translate-title="QUEUE_SOUND_VOLUME_MUTE"></button>
+                        </div>
+                    </div>
+                    <div id="player_controls_seeking">
+                        <div id="seeking_wrapper">
+                            <div id="player_seeking_back" class="bar">
+                                <div class="cap_right seeking_asset">
+                                    <div class="cap_left seeking_asset">
+                                        <div class="inner seeking_asset"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="player_seeking_buffer" class="bar buffer">
+                                <div class="cap_right seeking_asset">
+                                    <div class="cap_left seeking_asset">
+                                        <div class="inner seeking_asset"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="player_seeking_progress" class="bar progress">
+                                <div class="cap_right seeking_asset">
+                                    <div class="cap_left seeking_asset">
+                                        <div class="inner seeking_asset"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="player_seeking_scrubber" class="scrubber"></div>
+                        </div>
+                    </div>
+                    <div id="ytSwfWrapper" class="clear"></div>
+                </div>
+            </div>
+            <ul id="notifications"></ul>
+            <div id="lightbox_wrapper">
+                <iframe id="loginIframe" name="loginIframe" class="hide" frameborder="0"></iframe>
+                <a id="lightbox_close" class="close">
+        <span>Close Lightbox</span>
+    </a>
+                <div id="lightbox" class="shadow"></div>
+            </div>
+            <div id="lightbox_overlay"></div>
+        </div>
+    </div>
+    <div id="pixelFrameWrapper">
+        <iframe id="pixelFrame" name="pixelFrame" frameborder="0"></iframe>
+    </div>
+    <iframe name="httpsIframe" id="httpsIframe" class="https" ondominitialize="window.setupBridge()"></iframe>
+    <form action="" id="httpsForm" class="hide" target="httpsIframe"
+    enctype="multipart/form-data" method="post"></form>
+    <div id="loginFormHolder" style="display:none;">
+        <form id="dropdown_loginForm" class="vertical" action="https://grooveshark.com/empty.php"
+        target="loginIframe" method="post">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="header_login_username" class="label" data-translate-text="POPUP_SIGNUP_LOGIN_FORM_EMAIL_USERNAME">Email or Username:</label>
+                        <div class="input_wrapper">
+                            <div class="cap">
+                                <input id="header_login_username" type="text" name="username" value=""
+                                />
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <label for="header_login_password" class="label" data-translate-text="POPUP_SIGNUP_LOGIN_FORM_PASSWORD">Password:</label>
+                        <div class="input_wrapper">
+                            <div class="cap">
+                                <input id="header_login_password" type="password" name="password" value=""
+                                />
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <button class="btn btn_style4 submit" type="submit">
+                            <div>
+                                <span data-translate-text="LOGIN">Login</span>
+                            </div>
+                        </button>
+                        <a class="forget loginLink" data-translate-text="HEADER_FORGOT_PASSWORD">Reset your password</a>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </fieldset>
+            <div class="loginMethods">
+                <div class="loginDivider"></div>
+                <div class="loginButtons">
+                    <button class="loginMethod_btn facebookLogin" type="button">
+                        <div>
+                            <span data-translate-text="HEADER_LOGIN_FACEBOOK">Facebook</span>
+                        </div>
+                    </button>
+                    <button class="loginMethod_btn twitterLogin" type="button">
+                        <div>
+                            <span data-translate-text="HEADER_LOGIN_TWITTER">Twitter</span>
+                        </div>
+                    </button>
+                    <button class="loginMethod_btn googleLogin" type="button">
+                        <div>
+                            <span data-translate-text="HEADER_LOGIN_GOOGLE">Google</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src=""></script>
+<script type="text/javascript" src=""></script>
+<script>
+    
+</script>
+
+<div id="swfWrapper">
+    <object id="jsPlayerEmbed" name="jsPlayerEmbed">
+        <object type="application/x-shockwave-flash" data="/JSQueue.swf?20120521.01"
+        width="10" height="10">
+            <param name="allowscriptaccess" value="always" />
+            <param name="hasPriority" value="true" />
+            <param name="flashvars" value="hostname=grooveshark.com&amp;defaultEndpoint=more.php&amp;session={GroovesharkUnlocker-SessionId}&amp;uuid={GroovesharkUnlocker-UUID}&amp;name=jsPlayerEmbed&amp;playerController=GS.Controllers.PlayerController.instance()&amp;serviceController=GS.Controllers.ServiceController.instance()&amp;disableHTTPS=0&amp;runMode=production"
+            />
+        </object>
+    </object>
+</div>

@@ -1,0 +1,93 @@
+'\" t
+.\" $Id$
+.tr ~
+.TH WNPKGS 7WN "Jan 2005" "WordNet 2.1" "WordNet\(tm"
+.SH NAME
+wnpkgs \- description of various WordNet system packages
+.SH DESCRIPTION
+WordNet 2.1 is distributed in several formats and in various packages.
+All of the packages are available via anonymous FTP from
+\fBftp.cogsci.princeton.edu\fP and from the WordNet Web
+site at \fBhttp://wordnet.princeton.edu\fP.
+.SS "Packages Available Via FTP and WWW"
+The following WordNet packages can be downloaded using a web browser
+from \fBftp://ftp.cogsci.princeton.edu/wordnet/2.1\fP, or
+from the Web site noted above.  Users can also FTP directly from
+\fBftp.cogsci.princeton.edu\fP, directory \fBwordnet/2.1\fP.
+
+.TS
+center box ;
+c | c | c | c 
+lt | l | l | lt.
+\fBPackage\fP	\fBFilename\fP	\fBPlatform\fP	\fBDescription\fP
+_
+.na
+Database	\fBWordNet-2.1.tar.gz\fP	Unix/OS X	T{
+WordNet 2.1 database, interfaces, sense index, interface
+and library source code, documentation.
+T}
+Database	\fBWordNet-2.1.exe\fP	Windows	T{
+WordNet 2.1 database, interfaces, sense index, interface
+and library source code, documentation.
+T}
+Prolog Database	\fBWNprolog-2.1.tar.gz\fP	All	T{
+WordNet 2.1 database files in Prolog-readable format, documentation.
+T}
+Sense Map	\fBWNsnsmap-2.1.tar.gz\fP	All	T{
+Mapping of 1.7.1 to 2.1 senses, documentation.
+T}
+.TE
+
+.SS "Database Package"
+The database package is a complete installation for WordNet 2.1 users.
+It includes the 2.1 database files, source code for the WordNet browsers and
+library, and documentation.  The other packages are not included \-
+they must be downloaded and installed separately.
+
+Note that with this version of WordNet for Unix platforms, only source
+code is provided.  Users should carefully read the README and INSTALL
+files for detailed information on compiling WordNet and dependencies.
+
+Note that these are the platforms that WordNet 2.1 was tested on.
+Most should work on newer versions of the operating system.
+
+.TS
+center box ;
+c | c
+l | l.
+\fBOperating System\fP	\fBVersion\fP
+_
+Sun	Solaris 8
+Red Hat Linux	9
+OS X	10.2, 10.3
+Windows	XP
+Silicon Graphics Irix	6.5.8
+.TE
+
+.SS Prolog Database Package
+The WordNet 2.1 database files are available in this package in a
+Prolog-readable format.  Documentation describing the file format is
+included.  This package is only downloadable in compressed tar file
+format, although once unpackaged it can be used from Windows
+systems since the files are in ASCII.  Many Windows utilities, such as
+WinZip, can deal with a
+compressed tar file.
+.SS Sense Map Package
+To help users automatically convert 2.0 noun and verb senses to their
+corresponding 2.1 senses, we provide sense mapping information in
+this package.  This package contains files to map polysemous and
+monosemous words, and documentation that describes the format of these
+files.  As with the Prolog database, this package is only downloadable
+in compressed tar format, but the files are also in ASCII.
+.SH NOTES
+The lexicographer files and
+.BR grind (1WN)
+program are not generally distributed.
+
+All of the packages described above may not be available at the time
+of release of the 2.1 database package.
+.SH SEE ALSO
+.BR wnintro (1WN),
+.BR wnintro (3WN),
+.BR wnintro (5WN),
+.BR wnintro (7WN).
