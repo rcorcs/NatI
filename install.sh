@@ -5,4 +5,5 @@ sudo apt-get install libsox-fmt-mp3
 
 sudo pip install wikipedia
 sudo pip install pygoogle
-
+sudo pip install nltk
+sudo pip install sympy
