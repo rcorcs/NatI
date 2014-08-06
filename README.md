@@ -1,7 +1,5 @@
 https://www.youtube.com/watch?v=94IOUW0EQyg
 
-** gapi.py: Need to switch from [Google Speech API v1] to [Google Speech API v2].
-
 ## Dependencies
 * [Python 2.x +](http://www.python.org/getit/)
 * [nltk](http://www.nltk.org/) 

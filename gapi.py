@@ -21,46 +21,98 @@ languages = {'afrikaans':'af', 'albanian':'sq', 'amharic':'am', 'arabic':'ar', '
 class Speech:
 	def __init__(self, lang):
 		self.lang = lang
-	
-	def getText(self, fileName):
-		url = "http://www.google.com/speech-api/v1/recognize?lang=%s" % self.lang
+
+	def getText(self, fileName, show_all = False):
+		key = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw"
+
 		file_upload = fileName
 		if not file_upload.endswith('.flac'):
 			file_upload = "%s.flac" % file_upload
 		audio = open(file_upload, "rb").read()
+
+		url = "http://www.google.com/speech-api/v2/recognize?client=chromium&lang=%s&key=%s" % (self.lang, key)
 		header = {"Content-Type": "audio/x-flac; rate=8000"}
-		data = request.Request(url, audio, header)
-		post = urlopen(data)
-		response = post.read()
-		response = response.strip()
-		response = response.strip('\n')
-		if len(response)>0:
-			#print '*'+response+'*'
-			if '\n' in response:
-				bestPhrase = None
-				conf = 0
-				for strresp in response.split('\n'):
-					resp = json.loads(strresp)
-					if str(resp['status'])!='5' or len(resp['hypotheses']):
-						for hypothesis in resp['hypotheses']:
-							if float(hypothesis['confidence'])>conf:
-								bestPhrase = hypothesis['utterance']
-								conf = float(hypothesis['confidence'])
-				return bestPhrase
+
+		req = request.Request(url, data = audio, headers = header)
+		# check for invalid key response from the server
+		try:
+			response = request.urlopen(req)
+		except:
+			raise KeyError("Server wouldn't respond (invalid key or quota has been maxed out)")
+		response_text = response.read().decode("utf-8")
+
+		# ignore any blank blocks
+		actual_result = []
+		for line in response_text.split("\n"):
+			if not line: continue
+			result = json.loads(line)["result"]
+			if len(result) != 0:
+				actual_result = result[0]
+
+		# make sure we have a list of transcriptions
+		if "alternative" not in actual_result:
+			raise LookupError("Speech is unintelligible")
+
+		# return the best guess unless told to do otherwise
+		if not show_all:
+			for prediction in actual_result["alternative"]:
+				if "confidence" in prediction:
+					return prediction["transcript"]
+			raise LookupError("Speech is unintelligible")
+
+		spoken_text = []
+
+		# check to see if Google thinks it's 100% correct
+		default_confidence = 0
+		if len(actual_result["alternative"])==1: default_confidence = 1
+
+		# return all the possibilities
+		for prediction in actual_result["alternative"]:
+			if "confidence" in prediction:
+				spoken_text.append({"text":prediction["transcript"],"confidence":prediction["confidence"]})
 			else:
-				resp = json.loads(response)
-				if str(resp['status'])!='5' or len(resp['hypotheses']):
-					conf = 0
-					phrase = None
-					for hypothesis in resp['hypotheses']:
-						if float(hypothesis['confidence'])>conf:
-							phrase = hypothesis['utterance']
-							conf = float(hypothesis['confidence'])
-					return phrase
-				else:
-					return None
-		else:
-			return None
+				spoken_text.append({"text":prediction["transcript"],"confidence":default_confidence})
+		return spoken_text
+
+#	def getText(self, fileName):
+#		url = "http://www.google.com/speech-api/v1/recognize?lang=%s" % self.lang
+#		file_upload = fileName
+#		if not file_upload.endswith('.flac'):
+#			file_upload = "%s.flac" % file_upload
+#		audio = open(file_upload, "rb").read()
+#		header = {"Content-Type": "audio/x-flac; rate=8000"}
+#		data = request.Request(url, audio, header)
+#		post = urlopen(data)
+#		response = post.read()
+#		response = response.strip()
+#		response = response.strip('\n')
+#		if len(response)>0:
+#			#print '*'+response+'*'
+#			if '\n' in response:
+#				bestPhrase = None
+#				conf = 0
+#				for strresp in response.split('\n'):
+#					resp = json.loads(strresp)
+#					if str(resp['status'])!='5' or len(resp['hypotheses']):
+#						for hypothesis in resp['hypotheses']:
+#							if float(hypothesis['confidence'])>conf:
+#								bestPhrase = hypothesis['utterance']
+#								conf = float(hypothesis['confidence'])
+#				return bestPhrase
+#			else:
+#				resp = json.loads(response)
+#				if str(resp['status'])!='5' or len(resp['hypotheses']):
+#					conf = 0
+#					phrase = None
+#					for hypothesis in resp['hypotheses']:
+#						if float(hypothesis['confidence'])>conf:
+#							phrase = hypothesis['utterance']
+#							conf = float(hypothesis['confidence'])
+#					return phrase
+#				else:
+#					return None
+#		else:
+#			return None
 
 	def getAudio(self, text):
 		text = self._convertTextAsLinesOfText(text)
@@ -195,3 +247,15 @@ class Translator:
 	def _unescape(self, text):
 		return json.loads('"%s"' % text)
 
+if __name__ == "__main__":
+	tr = Translator('en-uk', 'pt-br')
+	print tr.translate('hello world')
+	sp = Speech('en-uk')
+	filename = sp.getAudio('hello world')
+	
+	import psw
+	psw.play(filename)
+	import os
+	os.remove(filename)
+
+	print sp.getText('browser.flac')
