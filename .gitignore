@@ -1,2 +1,6 @@
 *~
 *.pyc
+.*.wav
+.*.flac
+.*.mp3
+nohup.out
