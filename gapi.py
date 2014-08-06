@@ -1,4 +1,4 @@
-#gapi: google api
+#gapi.py: google api
 #by ROCHA, Rodrigo Caetano
 
 import re
