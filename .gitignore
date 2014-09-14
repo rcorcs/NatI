@@ -52,3 +52,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Custom
+.*.wav
+.*.flac
+.*.mp3
+nohup.out
