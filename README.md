@@ -4,6 +4,7 @@ https://www.youtube.com/watch?v=94IOUW0EQyg
 * [Python 2.x +](http://www.python.org/getit/)
 * [nltk](http://www.nltk.org/) 
 * [sympy](http://sympy.org/en/index.html)
+* [pygrooveshark](https://github.com/koehlma/pygrooveshark)
 
 
 ### Basic commands
